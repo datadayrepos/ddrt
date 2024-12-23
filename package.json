@@ -2,7 +2,6 @@
   "name": "@datadayrepos/ddrt",
   "type": "module",
   "version": "2.5.5",
-  "private": false,
   "packageManager": "pnpm@8.15.8",
   "description": "rich text editor",
   "author": "datadayrepos",
@@ -45,7 +44,7 @@
     "lint:fix": "eslint . --fix & stylelint **/*.{css,less,scss,vue} --fix",
     "commit": "czg",
     "check:types": "vue-tsc --noEmit --skipLibCheck",
-    "push": "pnpm build:lib && pnpm publish --no-git-checks --registry https://registry.npmjs.org/",
+    "push": "pnpm build:lib && pnpm publish --access public --no-git-checks --registry https://registry.npmjs.org/",
     "prepare": "husky install"
   },
   "peerDependencies": {
