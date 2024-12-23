@@ -48,7 +48,7 @@ export default defineConfig({
     outDir: 'lib',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'VuetifyProTiptap'
+      name: 'Ddrt' //When our library is included via a <script> tag in a browser (not as an ES module), it is attached to the global window object.
     },
     rollupOptions: {
       output: {
