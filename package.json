@@ -26,7 +26,6 @@
   "types": "./lib/index.d.ts",
   "files": [
     "LICENSE",
-    "README.md",
     "lib",
     "package.json"
   ],
@@ -44,7 +43,12 @@
     "lint:fix": "eslint . --fix & stylelint **/*.{css,less,scss,vue} --fix",
     "commit": "czg",
     "check:types": "vue-tsc --noEmit --skipLibCheck",
-    "push": "pnpm build:lib && pnpm publish --access public --no-git-checks --registry https://registry.npmjs.org/"
+    "push": "pnpm run pack:release && pnpm run pub",
+    "pack:build": "pnpm run build:lib",
+    "prepack": "node scripts/npm-package.mjs guard",
+    "prepublishOnly": "node scripts/npm-package.mjs guard",
+    "pack:release": "node scripts/npm-package.mjs pack",
+    "pub": "node scripts/npm-package.mjs publish --access=public --registry=https://registry.npmjs.org/"
   },
   "peerDependencies": {
     "vue": "^3.2.0",
